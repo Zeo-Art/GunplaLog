@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061323">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GunplaLog">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="styles.css">
+<title>GunplaLog – Dein Gundam Bau-Log</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><div><div class="eyebrow">DEIN GUNDAM BAU-LOG</div><h1>Gunpla<span>Log</span></h1></div><div class="status"><i></i><span id="connection">Offline bereit</span></div></header>
+<main>
+<section id="dashboard" class="screen active">
+<div class="hero panel"><div class="eyebrow">KOMMANDOZENTRALE</div><h2>Willkommen zurück, Meister.</h2><p>Deine Werkstatt. Deine Projekte. Dein Fortschritt.</p><div class="hero-stats"><div><b id="projectCount">0</b><small>Projekte</small></div><div><b id="totalTime">00:00</b><small>Bauzeit</small></div><div><b id="collectionCount">0</b><small>Modelle</small></div></div></div>
+<div class="section-head"><h2>Aktuelle Projekte</h2><button class="text-button" data-go="projects">Alle ansehen →</button></div>
+<div id="dashboardProjects" class="stack"></div>
+<div class="quick-grid"><button class="quick panel" data-go="timer"><span>◷</span><b>Bautimer</b><small>Zeit erfassen</small></button><button class="quick panel" data-go="progress"><span>▤</span><b>Baufortschritt</b><small>Schritte abhaken</small></button><button class="quick panel" data-go="diary"><span>▧</span><b>Bautagebuch</b><small>Notizen festhalten</small></button><button class="quick panel" data-go="paint"><span>◉</span><b>Farben & Werkzeuge</b><small>Inventar verwalten</small></button></div>
+</section>
+<section id="projects" class="screen"><div class="page-head"><div><div class="eyebrow">WERKSTATT</div><h2>Meine Projekte</h2></div><button id="addProject" class="primary">＋ Neu</button></div><div id="projectList" class="stack"></div></section>
+<section id="timer" class="screen"><div class="eyebrow">ZEITERFASSUNG</div><h2>Bautimer</h2><div class="timer-panel panel"><div class="timer-ring"><div id="timerDisplay">00:00:00</div><small>AKTIVE BAUZEIT</small></div><label for="timerProject">Aktuelles Projekt</label><select id="timerProject"></select><div class="timer-actions"><button id="timerStart" class="primary">Start</button><button id="timerPause" class="secondary">Pause</button><button id="timerStop" class="danger">Stop & speichern</button></div><p class="muted" id="timerHint">Die Zeit wird auf diesem Gerät gespeichert.</p></div><div class="section-head"><h2>Letzte Sitzungen</h2></div><div id="sessions" class="stack"></div></section>
+<section id="progress" class="screen"><div class="eyebrow">BAUPROTOKOLL</div><h2>Baufortschritt</h2><label for="progressProject">Projekt auswählen</label><select id="progressProject"></select><div id="progressContent" class="panel progress-box"></div></section>
+<section id="diary" class="screen"><div class="eyebrow">DOKUMENTATION</div><h2>Bautagebuch</h2><label for="diaryProject">Projekt auswählen</label><select id="diaryProject"></select><textarea id="diaryText" rows="4" placeholder="Was hast du heute gebaut? Welche Teile oder Farben hast du verwendet?"></textarea><button id="saveDiary" class="primary full">Eintrag speichern</button><div id="diaryEntries" class="stack"></div></section>
+<section id="paint" class="screen"><div class="eyebrow">LAGER & MATERIAL</div><h2>Farben & Werkzeuge</h2><div class="panel form-panel"><h3>Inventar hinzufügen</h3><input id="itemName" placeholder="z. B. Tamiya X-2 Weiß"><select id="itemType"><option>Farbe</option><option>Werkzeug</option><option>Material</option></select><button id="addItem" class="primary full">Zum Inventar hinzufügen</button></div><div id="inventory" class="stack"></div></section>
+<section id="collection" class="screen"><div class="eyebrow">HANGAR</div><h2>Meine Sammlung</h2><div class="panel form-panel"><h3>Modell eintragen</h3><input id="kitName" placeholder="z. B. RX-78-2 Gundam"><input id="kitGrade" placeholder="Grade, z. B. MG 1/100"><button id="addKit" class="primary full">Modell hinzufügen</button></div><div id="collectionList" class="stack"></div></section>
+<section id="settings" class="screen"><div class="eyebrow">SYSTEM</div><h2>Einstellungen</h2><div class="panel settings"><p><b>Sprache</b><span>Deutsch</span></p><p><b>Modus</b><span>Offline-First</span></p><p><b>Datenspeicherung</b><span>Nur auf diesem Gerät</span></p><button id="exportData" class="secondary full">Daten exportieren</button><label class="import-label">Datensicherung importieren<input id="importData" type="file" accept="application/json"></label><button id="clearData" class="danger full">Alle lokalen Daten löschen</button></div><p class="muted">GunplaLog speichert deine Einträge lokal. Erstelle regelmäßig eine Datensicherung.</p></section>
+</main>
+<nav class="bottom-nav"><button class="nav active" data-screen="dashboard"><span>⌂</span>Start</button><button class="nav" data-screen="projects"><span>▣</span>Projekte</button><button class="nav" data-screen="timer"><span>◷</span>Timer</button><button class="nav" data-screen="collection"><span>⬡</span>Sammlung</button><button class="nav" data-screen="settings"><span>☷</span>Mehr</button></nav>
+</div>
+<dialog id="projectDialog"><form method="dialog" id="projectForm"><div class="eyebrow">NEUES BAUVORHABEN</div><h2>Projekt anlegen</h2><input id="newName" required placeholder="Modellname"><input id="newGrade" placeholder="Grade, z. B. RG 1/144"><input id="newNumber" placeholder="Kit-Nummer (optional)"><div class="dialog-actions"><button class="secondary" value="cancel">Abbrechen</button><button id="createProject" class="primary" value="default">Anlegen</button></div></form></dialog>
+<script src="app.js"></script>
+</body></html>
