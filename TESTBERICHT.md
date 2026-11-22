@@ -8,3 +8,19 @@ Die App ist eine PWA. Das Apple-Systemmaterial Liquid Glass aus SwiftUI/UIKit is
 
 ## Prüfungen
 ZIP-Integrität und JavaScript-Syntax wurden geprüft. Vollständige interaktive Funktions-, Offline- und Gerätetests wurden nicht durchgeführt. Vor dem Austausch der Dateien Daten exportieren und nach dem Update auf dem Gerät testen.
+
+
+## Werkzeugverwaltung – Reparatur
+- Ursache behoben: Paint Lab und Werkzeuge verwendeten identische Eingabe-IDs; dadurch wurden im Werkzeugbereich Werte aus dem unsichtbaren Paint Lab ausgelesen.
+- Eigene Eingabefelder für beide Inventare; Hinzufügen, Bearbeiten und Löschen mit Bestätigung.
+- Speicherung im vorhandenen lokalen Datenbestand, ohne Migration oder Datenlöschung.
+- JavaScript-Syntax, statische Kontrollprüfungen und ZIP-Integrität bestanden.
+- Keine reale iPhone-Bedienprüfung durchgeführt.
+
+
+## Liquid Motion – zusätzliche Prüfungen
+- Bestehende JavaScript-Funktionen und lokale Datenspeicherung unverändert.
+- JavaScript-Syntax mit Node geprüft.
+- CSS mit tinycss2 auf Syntaxfehler geprüft.
+- ZIP-Integrität geprüft.
+- Echte iPhone-Duo-Leistung, Bedienbarkeit und Animationen noch nicht auf Hardware getestet.

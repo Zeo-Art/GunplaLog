@@ -287,3 +287,108 @@ input:focus,select:focus,textarea:focus{outline:2px solid #9cecff8a!important;ou
 }
 @media(prefers-contrast:more){.bottom-nav,.panel,.card,.modal{border-color:#d7f3ff!important}.muted,.sub{color:#d0e4f5!important}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+/* LIQUID MOTION — intensified animation without changing app behavior */
+:root{--motion-ease:cubic-bezier(.16,1,.3,1)}
+/* Layered, slowly drifting ambient illumination */
+body::before{animation:glassAurora 12s ease-in-out infinite alternate,liquidHue 18s ease-in-out infinite alternate!important}
+body::after{
+ content:"";position:fixed;inset:-15%;z-index:-1;pointer-events:none;
+ background:radial-gradient(ellipse 34% 29% at 18% 33%,#63ccff24,transparent 78%),
+ radial-gradient(ellipse 34% 33% at 82% 71%,#bd83ff1e,transparent 75%);
+ animation:ambientDrift 17s ease-in-out infinite alternate;
+}
+.scanlines{animation:scanDrift 14s linear infinite!important}
+.topbar{animation:headerArrival .75s var(--motion-ease) both}
+.topbar .brand img{animation:logoFloat 5s ease-in-out infinite}
+.topbar .online-dot{animation:statusBeacon 2.2s ease-in-out infinite!important}
+.page.active{animation:liquidPageIn .65s var(--motion-ease) both!important}
+.page.active>.eyebrow{animation:liquidElementIn .55s .06s both!important}
+.page.active>.page-title{animation:liquidElementIn .7s .12s both!important}
+.page.active>.sub{animation:liquidElementIn .65s .18s both!important}
+.page.active>.hero,.page.active>.grid,.page.active>.panel,.page.active>.hangar-grid,.page.active>.more-grid,.page.active>.section-head{
+ animation:liquidElementIn .8s .22s both!important;
+}
+.page.active .card,.page.active .more-link,.page.active .hangar-card{
+ animation:liquidCardIn .7s var(--motion-ease) both!important;
+}
+.page.active .card:nth-child(1),.page.active .more-link:nth-child(1){animation-delay:.12s!important}
+.page.active .card:nth-child(2),.page.active .more-link:nth-child(2){animation-delay:.19s!important}
+.page.active .card:nth-child(3),.page.active .more-link:nth-child(3){animation-delay:.26s!important}
+.page.active .card:nth-child(4),.page.active .more-link:nth-child(4){animation-delay:.33s!important}
+.page.active .card:nth-child(n+5),.page.active .more-link:nth-child(n+5){animation-delay:.4s!important}
+.panel,.card{position:relative;isolation:isolate}
+.panel::before,.card::before{
+ animation:liquidSurface 7s ease-in-out infinite!important;
+ opacity:.28!important;
+}
+.panel::after,.card::after{animation:glassGlint 8s ease-in-out infinite!important;opacity:.22!important}
+.panel:nth-child(even)::before,.card:nth-child(even)::before{animation-delay:-3s!important}
+.card:focus-within,.panel:focus-within{border-color:#a9f1ff90!important;box-shadow:0 16px 44px #0005,0 0 30px #70dfff28,inset 0 1px #ffffff66!important}
+.btn.primary{background-size:220% 220%!important;animation:primaryGlow 4s ease-in-out infinite!important}
+.btn:not(:disabled):active{animation:buttonTap .28s var(--motion-ease)!important}
+.progress i{
+ background-size:250% 100%!important;
+ animation:liquidProgress 3s linear infinite!important;
+}
+.progress i::after{animation:progressSpark 1.5s ease-in-out infinite!important}
+.timer-face{animation:timerBreathe 4.2s ease-in-out infinite!important}
+.timer-face.running{animation:timerBreathe 2.3s ease-in-out infinite!important}
+.timer-face::after{animation:spin 9s linear infinite!important}
+.timer-face.running::after{animation:spin 2.6s linear infinite!important}
+.timer-face strong{animation:timerDigits 4s ease-in-out infinite}
+.dashboard-avatar{animation:avatarHalo 4s ease-in-out infinite!important}
+.hero .metric strong{animation:metricShine 5s ease-in-out infinite}
+.bottom-nav{animation:dockRise .8s var(--motion-ease) both!important}
+.bottom-nav .nav{position:relative;overflow:hidden}
+.bottom-nav .nav.active{animation:activeNavGlow 3s ease-in-out infinite!important}
+.bottom-nav .nav.active span{animation:activeIconLift 3s ease-in-out infinite!important}
+.bottom-nav .nav::after{
+ content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+ background:linear-gradient(115deg,transparent 22%,#ffffff47 48%,transparent 74%);
+ transform:translateX(-170%);opacity:0;
+}
+.bottom-nav .nav.active::after{animation:navSweep 4.5s ease-in-out infinite}
+.modal-backdrop{animation:veilIn .3s ease-out both!important}
+.modal{animation:modalRise .52s var(--motion-ease) both!important}
+.toast{animation:toastFloat .5s var(--motion-ease) both!important}
+.list-item{animation:liquidElementIn .55s var(--motion-ease) both}
+.checkrow:has(input:checked){transition:background .3s ease,border-color .3s ease}
+.checkrow input{accent-color:#8cefff}
+@media(hover:hover){
+ .btn:not(:disabled):hover{transform:translateY(-3px)!important;box-shadow:0 12px 28px #55b9ff32,inset 0 1px #ffffff99!important}
+ .more-link:hover{transform:translateY(-5px) scale(1.01)!important}
+ .bottom-nav .nav:hover{transform:translateY(-2px)!important}
+}
+@keyframes liquidHue{from{filter:hue-rotate(-5deg)}to{filter:hue-rotate(12deg)}}
+@keyframes ambientDrift{from{transform:translate3d(-3%,2%,0) scale(1)}to{transform:translate3d(4%,-4%,0) scale(1.08)}}
+@keyframes scanDrift{from{background-position:0 0}to{background-position:0 72px}}
+@keyframes headerArrival{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+@keyframes logoFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes statusBeacon{0%,100%{opacity:1;box-shadow:0 0 4px #65f5ff}50%{opacity:.65;box-shadow:0 0 18px #65f5ff}}
+@keyframes liquidPageIn{from{opacity:0;transform:translateY(15px) scale(.985);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@keyframes liquidElementIn{from{opacity:0;transform:translateY(18px);filter:blur(3px)}to{opacity:1;transform:none;filter:none}}
+@keyframes liquidCardIn{from{opacity:0;transform:translateY(22px) scale(.96);filter:blur(5px)}to{opacity:1;transform:none;filter:none}}
+@keyframes liquidSurface{0%,100%{opacity:.12;filter:brightness(.9)}50%{opacity:.36;filter:brightness(1.3)}}
+@keyframes glassGlint{0%,100%{opacity:.1}50%{opacity:.28}}
+@keyframes primaryGlow{0%,100%{background-position:0% 50%;filter:brightness(1)}50%{background-position:100% 50%;filter:brightness(1.08)}}
+@keyframes buttonTap{50%{transform:scale(.95)}}
+@keyframes liquidProgress{from{background-position:250% 0}to{background-position:-250% 0}}
+@keyframes progressSpark{0%,100%{opacity:.55}50%{opacity:1;box-shadow:0 0 15px #d9ffff}}
+@keyframes timerBreathe{0%,100%{box-shadow:0 16px 40px #0007,inset 0 2px #ffffff59,0 0 25px #7bd6ff20}50%{box-shadow:0 16px 40px #0007,inset 0 2px #ffffff59,0 0 48px #7bd6ff70}}
+@keyframes timerDigits{0%,100%{text-shadow:0 0 9px #7bd6ff40}50%{text-shadow:0 0 25px #7bd6ffb0}}
+@keyframes avatarHalo{0%,100%{box-shadow:0 0 0 4px #ffffff12,0 10px 28px #0006}50%{box-shadow:0 0 0 9px #b8f3ff16,0 0 30px #7bd6ff70}}
+@keyframes metricShine{0%,100%{text-shadow:0 0 0 transparent}50%{text-shadow:0 0 22px #a4edff70}}
+@keyframes dockRise{from{opacity:0;transform:translate(-50%,25px)}to{opacity:1;transform:translate(-50%,0)}}
+@keyframes activeNavGlow{0%,100%{box-shadow:inset 0 1px #ffffffbb,0 4px 15px #0003}50%{box-shadow:inset 0 1px #ffffffee,0 0 20px #86dfff6b}}
+@keyframes activeIconLift{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes navSweep{0%,55%{transform:translateX(-170%);opacity:0}65%{opacity:.5}83%,100%{transform:translateX(170%);opacity:0}}
+@keyframes toastFloat{from{opacity:0;transform:translateY(12px) scale(.96)}to{opacity:1;transform:none}}
+/* The user’s accessibility and power settings take precedence. */
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+@media(prefers-reduced-transparency:reduce){
+ .bottom-nav,.topbar,.modal{background:#14243a!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+}

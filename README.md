@@ -56,3 +56,11 @@ Animierte HUD-Panels, Seitenwechsel, Lichtreflexe, Fortschrittsanzeigen, Timer-R
 
 ## Liquid Glass Edition
 Apple-Liquid-Glass-inspirierte PWA-Oberfläche mit Glasnavigation unten, stärkerer Tiefe und zugänglichen Transparenz-/Bewegungs-Fallbacks. Siehe TESTBERICHT.md.
+
+
+## Werkzeugverwaltung
+Werkzeuge und Farben lassen sich jetzt getrennt anlegen, bearbeiten und nach Bestätigung löschen. Bestehende Einträge bleiben erhalten.
+
+
+## Liquid Motion Edition
+Deutlich verstärkte CSS-Animationen: gestaffelte Seiten-/Kartenauftritte, dynamisches Glaslicht, animierte Navigation, Timer-Aura, Lade-/Fortschrittsglanz, pulsierende Statusanzeigen. Bei aktivierter iOS-Einstellung »Bewegung reduzieren« sind die Animationen deaktiviert. Werkzeugverwaltung aus der vorigen Version bleibt erhalten.
