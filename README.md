@@ -52,3 +52,7 @@ Wiederhergestellte Duo-Anpassung: kompakte untere Navigation auf beiden Displays
 
 ## Cinematic HUD Update
 Animierte HUD-Panels, Seitenwechsel, Lichtreflexe, Fortschrittsanzeigen, Timer-Ringe und Navigations-Highlights. Die Duo-Navigation bleibt unten. `prefers-reduced-motion` deaktiviert dekorative Animationen.
+
+
+## Liquid Glass Edition
+Apple-Liquid-Glass-inspirierte PWA-Oberfläche mit Glasnavigation unten, stärkerer Tiefe und zugänglichen Transparenz-/Bewegungs-Fallbacks. Siehe TESTBERICHT.md.
