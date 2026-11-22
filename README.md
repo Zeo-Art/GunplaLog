@@ -44,3 +44,7 @@ Projekt-/Hangar-Trennung, Suchfelder, größeres festes Bottom-Menü, Timer-Fix,
 
 ## iPhone Duo
 Responsive Anpassung fuer das 5,4-Zoll-Aussendisplay und das 7,6-Zoll-Innendisplay. Passt sich beim Auf- und Zuklappen sowie bei Rotation und Split View an den jeweils verfuegbaren Viewport an. TRON-Design und bestehende Datenstruktur bleiben erhalten.
+
+
+## iPhone Duo Navigation
+Geschlossen (schmale Viewports unter 600 CSS-Pixel): kompakte vertikale Symbolleiste rechts. Offen (ab 600 CSS-Pixel): kompakte untere Symbolleiste. Fünf Navigationsziele bleiben erhalten. Die Umschaltung folgt der CSS-Viewportbreite und kann auch in Split View erfolgen.
