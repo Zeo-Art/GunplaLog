@@ -1,13 +1,13 @@
 {
-  "name": "GunplaLog – Dein Gundam Bau-Log",
+  "name": "GunplaLog – Command Center",
   "short_name": "GunplaLog",
-  "lang": "de",
+  "description": "Deine futuristische Gunpla-Kommandozentrale",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#050d19",
-  "theme_color": "#061323",
-  "description": "Deine Gunpla-Werkstatt – offline und kostenlos.",
+  "orientation": "any",
+  "background_color": "#02060b",
+  "theme_color": "#02060b",
   "icons": [
     {
       "src": "icon.svg",

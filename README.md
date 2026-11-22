@@ -1,25 +1,46 @@
-# GunplaLog – kostenlose iPhone-Web-App
+# GunplaLog – TRON Command Center
 
-Deutsche, offlinefähige PWA für Gunpla-Projekte. Keine Apple-Developer-Mitgliedschaft und kein Xcode nötig.
+Kostenloser, deutschsprachiger Gunpla-Tracker als installierbare Web-App (PWA).
 
-## Enthalten
-- Projektübersicht und neue Projekte
-- Baufortschritt mit 10 frei abhakbaren Phasen
-- Bautimer mit Start, Pause und Speichern von Sitzungen
+## Enthaltene Funktionen
+- Kommandozentrale mit persönlicher Begrüßung und aktivem Projekt
+- Projekte/Modelle anlegen, bearbeiten, löschen und als aktiv markieren
+- Hangar mit kompakten anklickbaren Modellkarten und Detailansicht
+- Modellgrade und Maßstäbe 1/100, 1/144, 1/60, 1/35
+- Modellbild lokal hinterlegen
+- Bauschritte und automatischer Fortschritt
+- Bauzeittimer mit gespeicherten Sitzungen, Datum und Gesamtbauzeit
 - Bautagebuch
-- Farben-, Werkzeug- und Materialinventar
-- Sammlung
-- JSON-Datensicherung exportieren/importieren
-- Service Worker für Offline-App-Shell
+- Paint Lab und Werkzeug-/Materialinventar
+- Profil mit Benutzername, Avatar und Kurzbeschreibung
+- JSON-Export und -Import
+- Offline-App-Shell via Service Worker
+- Responsives Layout für Hoch-/Querformat und schmale/breite Displays
 
-## Auf dem iPhone verwenden
-1. Die Dateien auf einen HTTPS-Webhost hochladen (z. B. GitHub Pages).
-2. Die veröffentlichte Adresse in **Safari** öffnen.
-3. Teilen → **Zum Home-Bildschirm**.
-4. **Als Web-App öffnen** aktivieren (falls angezeigt) → Hinzufügen.
-5. App einmal bei bestehender Verbindung starten, damit die Offline-Dateien gecacht werden.
+## Installation
+1. Dateien auf einen HTTPS-Webhost laden (z. B. GitHub Pages mit öffentlichem Repository).
+2. URL in Safari auf dem iPhone öffnen.
+3. Teilen → „Zum Home-Bildschirm“.
+4. App einmal online öffnen, damit die Offline-Dateien zwischengespeichert werden.
 
-Danach sind die Kernfunktionen ohne Internet nutzbar. Service Worker benötigen HTTPS (localhost ausgenommen).
+## Wichtige Hinweise
+- Daten werden lokal im Browser (localStorage) gespeichert. Browserdaten löschen kann Daten entfernen. Regelmäßig JSON-Backups exportieren.
+- Für Offline-Cache und PWA-Installation wird HTTPS benötigt (localhost ausgenommen).
+- Der Timer berechnet die Zeit über gespeicherte Zeitstempel. iOS garantiert keine dauerhafte Hintergrundausführung oder Live-Aktualisierung im Hintergrund. Beim erneuten Öffnen wird die verstrichene Zeit berechnet.
+- Modellbilder werden lokal im Browser gespeichert; große Bilder werden beim Import verkleinert.
+- Dieses Paket ist ein funktionsfähiger Prototyp, keine native iOS-App. Es enthält keine Cloud-Synchronisierung, Accounts oder Push-Benachrichtigungen.
+- Die App verwendet für ihre Oberfläche keine externen Laufzeitdienste. Die optionale Google-Font-Einbindung kann offline nicht geladen werden; System-Fallbacks greifen.
 
-## Hinweis zum aktuellen Entwicklungsstand
-Dies ist ein funktionsfähiger Starter-Prototyp, keine native App-Store-App. Daten liegen lokal im Browser-Speicher des Geräts. Browserdaten löschen kann lokale Daten entfernen – daher regelmäßig unter Einstellungen eine Sicherung exportieren. Timer-Zeit wird bei App-Neustart anhand des gespeicherten Zeitstempels berechnet; iOS garantiert keine dauerhaft laufende Hintergrundausführung oder Live-Aktualisierung bei geschlossener App. Fotos, Cloud-Sync, Push-Nachrichten und Community sind noch nicht implementiert.
+
+## Update: Navigation und Projekt-Detailansicht
+- Feste untere Navigation mit fünf Symbolen: Home, Projekte, Timer, Hangar und Mehr.
+- Tagebuch, Paint Lab, Werkzeuge, Profil und Einstellungen sind über „Mehr“ erreichbar.
+- Event-Bindings werden nach dem Erzeugen der Projekt-Detailansicht und des Projektformulars erneut gesetzt; Schließen, Bearbeiten, Löschen und Bauschritt-Aktionen sind dadurch erreichbar.
+
+
+## Neue Version
+Projekt-/Hangar-Trennung, Suchfelder, größeres festes Bottom-Menü, Timer-Fix, Tagebuch-Bearbeitung und Profilbild im Dashboard. Siehe TESTBERICHT.md für die Grenzen der Prüfungen.
+
+
+## iPhone Duo
+Responsive Anpassung fuer das 5,4-Zoll-Aussendisplay und das 7,6-Zoll-Innendisplay. Passt sich beim Auf- und Zuklappen sowie bei Rotation und Split View an den jeweils verfuegbaren Viewport an. TRON-Design und bestehende Datenstruktur bleiben erhalten.
