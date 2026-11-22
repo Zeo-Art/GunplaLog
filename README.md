@@ -47,10 +47,8 @@ Responsive Anpassung fuer das 5,4-Zoll-Aussendisplay und das 7,6-Zoll-Innendispl
 
 
 ## iPhone Duo Navigation
-Geschlossen (schmale Viewports unter 600 CSS-Pixel): kompakte vertikale Symbolleiste rechts. Offen (ab 600 CSS-Pixel): kompakte untere Symbolleiste. Fünf Navigationsziele bleiben erhalten. Die Umschaltung folgt der CSS-Viewportbreite und kann auch in Split View erfolgen.
+Wiederhergestellte Duo-Anpassung: kompakte untere Navigation auf beiden Displays, keine seitliche Symbolleiste und keine Positionsregler.
 
 
-Navigation v7: rechte Symbolleiste wieder vollstaendig innerhalb des Bildschirms (12px Randabstand); Position auf dem Innendisplay unveraendert.
-
-
-Navigation: Auf dem geschlossenen Display rechts innerhalb des App-Viewports. Unter Mehr → Einstellungen können Randabstand und vertikale Position eingestellt werden; die Werte werden lokal gespeichert.
+## Cinematic HUD Update
+Animierte HUD-Panels, Seitenwechsel, Lichtreflexe, Fortschrittsanzeigen, Timer-Ringe und Navigations-Highlights. Die Duo-Navigation bleibt unten. `prefers-reduced-motion` deaktiviert dekorative Animationen.

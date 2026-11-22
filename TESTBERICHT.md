@@ -25,3 +25,11 @@ Alle sieben Dateien im GitHub-Repository ersetzen, committen und die App nach de
 
 ## iPhone-Duo-Anpassung
 Responsive CSS-Breakpoints fuer kompakte und aufgeklappte Ansichten, Querformat, Safe Areas und Modale ergaenzt. Ein echter Geraetetest auf iPhone Duo wurde nicht durchgefuehrt.
+
+
+## Duo-Navigation zurückgesetzt
+Die Navigation wurde auf eine feste untere Leiste zurückgesetzt. ZIP-Integrität und JavaScript-Syntax wurden geprüft. Ein echter iPhone-Gerätetest wurde nicht durchgeführt.
+
+
+## Cinematic HUD Update – Prüfgrenzen
+Zusätzliche Animationen sind CSS-basiert und greifen nicht in Projekt- oder Timerdaten ein. ZIP-Integrität und JavaScript-Syntax werden geprüft. Kein echter iPhone-Gerätetest und keine vollständige Browser-Regression durchgeführt.
