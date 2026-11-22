@@ -24,3 +24,11 @@ ZIP-Integrität und JavaScript-Syntax wurden geprüft. Vollständige interaktive
 - CSS mit tinycss2 auf Syntaxfehler geprüft.
 - ZIP-Integrität geprüft.
 - Echte iPhone-Duo-Leistung, Bedienbarkeit und Animationen noch nicht auf Hardware getestet.
+
+
+## Projektkategorien
+Die neuen Auswahloptionen wurden ergänzt; bisherige Werte bleiben bestehen. Statische Syntaxprüfung und ZIP-Integrität durchgeführt, kein realer Gerätetest.
+
+
+## v15 Prüfungen
+JavaScript-Syntax und ZIP-Integrität erfolgreich. Neue Modellreihe in Projektformular und Speichern vorhanden; Migration der vier bisherigen Reihen aus Maßstab vorgesehen. Kein echter Gerätetest durchgeführt.

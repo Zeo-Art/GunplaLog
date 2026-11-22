@@ -64,3 +64,11 @@ Werkzeuge und Farben lassen sich jetzt getrennt anlegen, bearbeiten und nach Bes
 
 ## Liquid Motion Edition
 Deutlich verstärkte CSS-Animationen: gestaffelte Seiten-/Kartenauftritte, dynamisches Glaslicht, animierte Navigation, Timer-Aura, Lade-/Fortschrittsglanz, pulsierende Statusanzeigen. Bei aktivierter iOS-Einstellung »Bewegung reduzieren« sind die Animationen deaktiviert. Werkzeugverwaltung aus der vorigen Version bleibt erhalten.
+
+
+## Neue Projektkategorien
+Modellmaßstab: 30MS, 30MM, 30MF, PokePla. Grade: FRM, FRS. Alle bisherigen Optionen bleiben erhalten; bereits gespeicherte Werte werden beim Bearbeiten weiter angezeigt.
+
+
+## Modellreihen (v15)
+Neues Projektfeld „Modellreihe“ mit Gunpla, 30MS, 30MM, 30MF, PokePla, Sonstige. Maßstab enthält nur echte Maßstabswerte. FRM/FRS bleiben Grades. Alte als Maßstab gespeicherte Modellreihen werden beim Laden in das neue Feld übernommen. Projektkarten, Detailansicht, Dashboard, Hangar, Timer und Suche zeigen bzw. berücksichtigen Modellreihen.
