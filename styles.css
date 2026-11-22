@@ -178,3 +178,8 @@ button{ -webkit-tap-highlight-color:transparent }
     padding-bottom:calc(15px + env(safe-area-inset-bottom))!important;
   }
 }
+
+/* Horizontal alignment fix: keep the complete rail visible inside the right edge. */
+@media (max-width:599px){
+  .bottom-nav{right:max(12px, env(safe-area-inset-right))!important;left:auto!important;}
+}

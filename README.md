@@ -48,3 +48,6 @@ Responsive Anpassung fuer das 5,4-Zoll-Aussendisplay und das 7,6-Zoll-Innendispl
 
 ## iPhone Duo Navigation
 Geschlossen (schmale Viewports unter 600 CSS-Pixel): kompakte vertikale Symbolleiste rechts. Offen (ab 600 CSS-Pixel): kompakte untere Symbolleiste. Fünf Navigationsziele bleiben erhalten. Die Umschaltung folgt der CSS-Viewportbreite und kann auch in Split View erfolgen.
+
+
+Navigation v7: rechte Symbolleiste wieder vollstaendig innerhalb des Bildschirms (12px Randabstand); Position auf dem Innendisplay unveraendert.
