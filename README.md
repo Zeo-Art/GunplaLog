@@ -51,3 +51,6 @@ Geschlossen (schmale Viewports unter 600 CSS-Pixel): kompakte vertikale Symbolle
 
 
 Navigation v7: rechte Symbolleiste wieder vollstaendig innerhalb des Bildschirms (12px Randabstand); Position auf dem Innendisplay unveraendert.
+
+
+Navigation: Auf dem geschlossenen Display rechts innerhalb des App-Viewports. Unter Mehr → Einstellungen können Randabstand und vertikale Position eingestellt werden; die Werte werden lokal gespeichert.

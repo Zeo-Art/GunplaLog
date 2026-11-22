@@ -183,3 +183,21 @@ button{ -webkit-tap-highlight-color:transparent }
 @media (max-width:599px){
   .bottom-nav{right:max(12px, env(safe-area-inset-right))!important;left:auto!important;}
 }
+
+/* Duo navigation: final viewport-safe positioning. Previous offsets are overridden. */
+@media (max-width:599px){
+ .bottom-nav{
+   right:calc(max(8px, env(safe-area-inset-right)) + var(--rail-right-offset, 0px))!important;
+   left:auto!important;
+   top:var(--rail-top, 24dvh)!important;
+   bottom:auto!important;
+   transform:none!important;
+   box-sizing:border-box!important;
+ }
+}
+@media (min-width:600px){
+ .bottom-nav{bottom:0!important;top:auto!important;transform:translateX(-50%)!important;}
+}
+.nav-adjust{margin-top:16px;border:1px solid #126084;border-radius:10px;padding:14px}
+.nav-adjust input[type=range]{width:100%;accent-color:#65f5ff}
+.nav-adjust label{display:block;margin:10px 0 4px}
